@@ -14,7 +14,8 @@ export class ClassMouse extends Component{
     componentDidMount(){     // this lifecycle method runs once when the component mounts. It attaches a mousemove event listener to the whole window so it tracks the mouse anywhere in the viewport.
         window.addEventListener('mousemove', this.logMousePosition)
     }
-    render(){    // displays current x and y values from the state. It re-renders every time the state updates (ie on every moouse move)
+    
+    render(){    // displays current x and y values from the state. It re-renders every time the state updates (ie on every mouse move)
         return(
             <div>
                 X- {this.state.x} Y- {this.state.y}
@@ -23,3 +24,10 @@ export class ClassMouse extends Component{
     }
 }
 
+/* 
+    without hook clean up is done as given below
+
+    componentWillUnmount(){
+        window.removeEventListener('mousemove', this.logMousePosition)
+    }
+*/
