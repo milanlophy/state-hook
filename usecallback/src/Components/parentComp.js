@@ -1,5 +1,5 @@
 
-import React, {useState} from 'react'
+import React, { useState} from 'react'
 import Title from './title'
 import {Count} from './count'
 import Button from './button'
@@ -41,20 +41,16 @@ export function ParentComp(){
 /*
 import {useCallback} from 'react'
 
-const p= document.createElement('p')
-p.textContent= 'useCallback is a hook that will return a memoized version of callback function that only changes if one of the dependencies has changed. ie it will return same fn if prop hasn\'t changed. So react won\'t re-render. It is useful when passing callbacks(ie fns) to optimized child components (ie components optimized by React.memo) to prevent unnecessary renders due to different m/y reference.'
-document.body.appendChild(p)
-
 export function ParentComp(){
     const [age, setAge]= useState(25)
     const [salary, setSalary]= useState(50000)
 
     const incrementAge= useCallback(()=>{
         setAge(age + 1)
-    },[])
+    },[age])
     const incrementSalary= useCallback(()=>{
         setSalary(salary + 1000)
-    },[])
+    },[salary])
     return(
         <div>
             <Title/>
@@ -65,20 +61,15 @@ export function ParentComp(){
         </div>
     )
 }
-    */
+    
 
-import {useCallback} from 'react'
+const p= document.createElement('p')
+p.textContent= 'useCallback is a hook that will return a memoized version of callback function that only changes if one of the dependencies has changed. ie it will return same fn if prop hasn\'t changed. So react won\'t re-render. '
+document.body.appendChild(p)
 
-export function ParentComp(){
-    const [age, setAge]= useState(25)
-    const [salary, setSalary]= useState(50000)
+const p1= document.createElement('p')
+p1.textContent= 'It is useful when passing callbacks(ie fns) to optimized child components (ie components optimized by React.memo) to prevent unnecessary renders due to different m/y reference. useCallback hook accepts 2 parameters, a callBack fn and a dependency array.'
+document.body.appendChild(p1)
 
-    const incrementAge
-    return(
-        <div>
-            <Title/>
-            <Count text='Age' count={age}/>
-            <Button clickHandler={incrementAge}>Increment Age</Button>
-        </div>
-    )
-}
+*/
+

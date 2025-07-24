@@ -13,6 +13,8 @@ export function Button({clickHandler, children}){
 */
 
 // optimized using React.memo
+
+
 function Button({clickHandler, children}){
     console.log(`Rendering Button - ${children}`)
     return(
@@ -22,3 +24,4 @@ function Button({clickHandler, children}){
     )
 }
 export default React.memo(Button)
+

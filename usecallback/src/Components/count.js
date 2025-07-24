@@ -8,6 +8,8 @@ export function Count({text, count}) {
 */
 
 // optimized using React.memo
+
+
 export const Count= React.memo(function Count({text, count}){
     console.log(`Rendering - ${text}`)
     return(
@@ -16,3 +18,4 @@ export const Count= React.memo(function Count({text, count}){
         </div>
     )
 })
+    
