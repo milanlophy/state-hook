@@ -7,8 +7,10 @@ import './App.css';
 // import { HookTimer } from './Components/hookTimer_useRef';    // Timer using useRef hook
 // import { DocTitleOne } from './Components/docTitle1_CustomHook';    // custom hook - title updation
 // import {DocTitleTwo} from './Components/docTitle2_CustomHook';      
- import { CounterOne } from './Components/Counter1_CustomHook';
-import { CounterTwo } from './Components/counter2_CustomHooks';
+// import { CounterOne } from './Components/Counter1_CustomHook';      //  custom hook - counter
+// import { CounterTwo } from './Components/counter2_CustomHooks';
+import { Form } from './Components/form_customHook';
+
 
 function App() {
   return (
@@ -22,6 +24,7 @@ function App() {
       {/* <DocTitleTwo/> */}
       {/* <CounterOne/> */}
       {/* <CounterTwo/> */}
+      {/* <Form/> */}
     </div>
   );
 }

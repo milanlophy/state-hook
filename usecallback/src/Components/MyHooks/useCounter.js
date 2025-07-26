@@ -1,5 +1,8 @@
 
+// custom hook: counter using useState (my idea)
+
 /*
+
 import {useState} from 'react'
 
 export function useCounter(){
@@ -7,10 +10,10 @@ export function useCounter(){
     const [count, setCount] = useState(0)
     
     const increment=() =>{
-        setCount(count + 1)
+        setCount(prevCount=> prevCount + 1)
     }
     const decrement=() =>{
-        setCount(count - 1)
+        setCount(prevCount=> prevCount - 1)
     }
     const reset=() =>{
         setCount(0)
@@ -20,10 +23,35 @@ export function useCounter(){
 
 */
 
-// using useReducer
+// using useState general version (in video)
+
+
+
+import {useState} from 'react'
+
+export function useCounter(initialCount = 0,value){
+    const [count, setCount] = useState(initialCount)
+
+    const increment= ()=>{
+        setCount(prevCount => prevCount + value)
+    }
+    const decrement= ()=>{
+        setCount(prevCount => prevCount - value)
+    }
+    const reset= ()=> {
+        setCount(initialCount)
+    }
+    return [count, increment, decrement, reset]
+}
+
+ 
+
+// custom hook: counter using useReducer
+
+/*
 import {useReducer} from 'react'
 
-const initialState= 0
+const initialState = 0
 const reducer=(state, action)=>{
     switch(action){
         case 'increment':
@@ -32,13 +60,14 @@ const reducer=(state, action)=>{
             return state - 1
         case 'reset':
             return initialState
-        default : 
+        default:
             return state
     }
 }
 
 export function useCounter(){
-
-    const [count, dispatch] = useReducer(reducer, initialState)
-    return [count, dispatch]
+    const [count, dispatch] = useReducer(reducer,initialState)
+    return [count,dispatch]
 }
+    
+*/
